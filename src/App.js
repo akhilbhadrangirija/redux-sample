@@ -21,7 +21,7 @@ height:100%;
 display:flex;
 flex-direction:row;
 padding:7%;
-justify-content:space-around;
+justify-content:space-between;
 
 `;
 const InputSection = styled.div`
@@ -37,13 +37,16 @@ border-radius:5%`;
 
 
 function App() {
-
+  const color=useSelector((state)=>state.theme.value)
+  console.log(color.color)
+  const theme =color.color;
   const user = useSelector((state)=>state.user.value)
 
   return (
     <Wrapper>
       <Cover src="https://img.freepik.com/free-vector/hand-drawn-business-planning_23-2149172241.jpg?t=st=1653803713~exp=1653804313~hmac=e4d9e160824a80ca9fead78c8caf59af48e7e62340bab0819a0f5f1ab3e6a779&w=740" />
       <InputSection>
+      <p style={{backgroundColor:theme}}>{theme}  Hi hello</p>
         <Avatar>Hi {user.name}! <br />{user.email}</Avatar>
         <LoginForm name={user.name} email={user.email}/>
       </InputSection>

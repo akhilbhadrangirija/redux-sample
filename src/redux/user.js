@@ -8,12 +8,12 @@ export const userSlice = createSlice({
         login:(state,action)=>{
             state.value=action.payload;
         },
-        updateemail:(state,action)=>{
-            state.value=action.payload
-        }
+        // updateemail:(state,action)=>{
+        //     state.value=action.payload
+        // }
     }
     
 });
-export const {login,updateemail} = userSlice.actions;
+export const {login} = userSlice.actions;
 
 export default userSlice.reducer;
